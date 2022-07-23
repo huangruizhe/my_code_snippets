@@ -23,3 +23,15 @@ zcat $fisher_text | sed 's/^/uid /' > $workdir/fisher_text.txt
 zcat $fisher_text | awk '{print "line-"FNR" "$0}' > $workdir/fisher_text.txt
 
 
+########################################################
+# Parallelize a Bash FOR Loop
+########################################################
+# https://unix.stackexchange.com/a/103921
+for stuff in things
+do
+( something
+  with
+  stuff ) &
+done
+wait # for all the something with stuff
+
