@@ -35,3 +35,13 @@ do
 done
 wait # for all the something with stuff
 
+
+########################################################
+# Get running time of some codes
+########################################################
+# https://unix.stackexchange.com/questions/52313/how-to-get-execution-time-of-a-script-effectively
+start=`date +%s`
+stuff
+end=`date +%s`
+runtime=$((end-start))
+
